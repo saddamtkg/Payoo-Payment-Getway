@@ -76,14 +76,13 @@
           is low and fast.
         </p>
         <div class="buttons grid grid-cols-3 gap-3">
-          <button
+          <button onclick="showOnly('add-money')"
             class="btn btn-ghost border-1 border-gray-100 rounded-[10px] flex-col h-full gap-2 py-4"
           >
             <img src="./assets/opt-1.png" alt="add money" class="w-6 h-6" />
             <p>Add Money</p>
           </button>
-          <button
-            id="cashout-btn"
+          <button onclick="showOnly('cashout')"
             class="btn btn-ghost border-1 border-gray-100 rounded-[10px] flex-col h-full gap-2 py-4"
           >
             <img src="./assets/opt-2.png" alt="add money" class="w-6 h-6" />
@@ -107,7 +106,7 @@
             <img src="./assets/opt-5.png" alt="add money" class="w-6 h-6" />
             <p>Pay Bill</p>
           </button>
-          <button
+          <button onclick="showOnly('history')"
             class="btn btn-ghost border-1 border-gray-100 rounded-[10px] flex-col h-full gap-2 py-4"
           >
             <img src="./assets/opt-6.png" alt="add money" class="w-6 h-6" />
@@ -120,7 +119,7 @@
           <p id="error-message-text" class="text-red-500 text-lg text-center empty:hidden py-4"></p>
         </div>
       </section>
-      <section id="add-money" class="w-11/12 mx-auto py-10 pt-0">
+      <section id="add-money" class="w-11/12 mx-auto py-10 pt-0 hidden">
         <div class="card-body shadow-xl rounded-2xl border-1 border-gray-100">
           <h2 class="text-2xl font-bold mb-4">Add Money</h2>
             <fieldset class="fieldset space-y-4">
@@ -198,7 +197,7 @@
           </div>
         </div>
       </section>
-      <section id="cashout" class="w-11/12 mx-auto py-10 pt-0">
+      <section id="cashout" class="w-11/12 mx-auto py-10 pt-0 hidden">
         <div class="card-body shadow-xl rounded-2xl border-1 border-gray-100">
           <h2 class="text-2xl font-bold mb-4">Cashout</h2>
             <fieldset class="fieldset space-y-4">
@@ -247,6 +246,12 @@
             </fieldset>
           </div>
         </div>
+      </section>
+      <section id="history" class="w-11/12 mx-auto py-5 hidden">
+        <h2 class="text-2xl font-bold mb-4">Transaction History</h2>
+         <div id="history-container" class="space-y-4">
+
+         </div>
       </section>
     </main>
     <script src="script/machine.js"></script>

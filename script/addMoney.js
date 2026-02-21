@@ -27,12 +27,18 @@ function initAddMoney() {
       setMessage("Invalid pin", "error");
       return;
     }
-    // 5. add money
-    setMessage(`Money added successfully: ${amount}
-      From ${bankAccount} account number ${accno}
-      At ${new Date().toLocaleString()}
-      New balance: ${newBalance}`, "success");
-    setBalance(newBalance);
+
+    // 5. add transaction to history
+    const transactionCard = document.getElementById("history-container");
+    const newTransactionCard = document.createElement("div");
+    newTransactionCard.classList.add("transaction-card", "p-5", "bg-base-100", "box-shadow-xl", "rounded-2xl", "border-1", "border-gray-100");
+    newTransactionCard.innerHTML = `
+      <p>Money added successfully: ${amount}</p>
+      <p>From ${bankAccount} account number ${accno}</p>
+      <p>At ${new Date().toLocaleString()}</p>
+    `;
+    transactionCard.appendChild(newTransactionCard);
+
   });
 }
 

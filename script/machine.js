@@ -37,3 +37,20 @@ function hideErrorMessage(){
   errorMessage.innerText = "";
   errorMessage.classList.add("hidden");
 }
+
+
+//machine -> id> hide all > show id
+
+function showOnly(id){
+
+  const addmoney = document.getElementById("add-money");
+  const cashout = document.getElementById("cashout");
+  const history = document.getElementById("history");
+
+  // console.log(`add Money- ${addmoney} Cashout- ${cashout}`);
+  addmoney.classList.add("hidden");
+  cashout.classList.add("hidden");
+  history.classList.add("hidden");
+  document.getElementById(id).classList.remove("hidden");
+
+}
